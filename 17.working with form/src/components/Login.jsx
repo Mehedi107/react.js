@@ -1,7 +1,11 @@
 export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('form submitted!');
+
+    const fd = new FormData(e.target);
+    const email = fd.get('email');
+    const password = fd.get('password');
+    console.log({ email, password });
   }
   return (
     <form onSubmit={handleSubmit}>
