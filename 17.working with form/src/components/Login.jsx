@@ -3,9 +3,11 @@ export default function Login() {
     e.preventDefault();
 
     const fd = new FormData(e.target);
+    console.log(e.target);
     const email = fd.get('email');
     const password = fd.get('password');
     console.log({ email, password });
+    e.target.reset();
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -24,7 +26,9 @@ export default function Login() {
       </div>
 
       <p className="form-actions">
-        <button className="button button-flat">Reset</button>
+        <button type="reset" className="button button-flat">
+          Reset
+        </button>
         <button className="button">Login</button>
       </p>
     </form>
